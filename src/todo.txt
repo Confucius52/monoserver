@@ -1,0 +1,10 @@
+dice class
+	first & second dice roll values
+	check turns
+
+state.players.get(id) 
+state.dice.first/second
+
+state.roll() //change players values, check doubles
+increment state.curturn
+send people to jail if they roll 3 doubles, player.position = 40
