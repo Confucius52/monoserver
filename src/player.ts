@@ -6,9 +6,11 @@ export default class Player extends Schema {
 	@type("number") money;
 	@type("number")	cards;
 	@type("number")	location;
+	id;
 
-	constructor(username, color="", money=200, cards=0, location=0) {
+	constructor(username, id, color, money=200, cards=0, location=0) {
 		super();
+		this.id = id;
 		this.cards = cards;
 		this.username = username;
 		this.color = color;

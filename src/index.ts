@@ -1,5 +1,6 @@
 import { Server } from "colyseus";
 import { MyRoom } from "./MyRoom";
+
 const port = +process.env.port || 3000;
 
 const gameServer = new Server();

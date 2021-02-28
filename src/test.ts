@@ -8,10 +8,14 @@ async function main() {
 		const room = await client.joinOrCreate("my_room", {username:"greenpizza12"});
 		console.log("joined successfully");
 		// console.log("joined successfully", room);
-		// room.onStateChange((state) => {
-		// 	console.log(JSON.stringify(state, null, 2));
-		// });
-		room.send("roll_dice");
+		room.onStateChange((state: any) => {
+			console.log(JSON.stringify(state, null, 2));
+			if (state.currentSituation == "waiting_for_dice_roll") {
+				room.send("roll_dice");
+			}
+		});
+
+		// room.send("roll_dice");
 
 	} catch (e) {
 		console.error("join error", e);
