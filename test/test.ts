@@ -15,5 +15,7 @@ export function simulate(log) {
     room.onJoin(playerA, {username: 'greenpizza12'})
     room.onJoin(playerB, {username: 'elephant'})
     playerA.send('roll_dice')
+    log(room.state)
+
 }
 
