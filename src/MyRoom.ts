@@ -25,7 +25,7 @@ export class MyRoom extends Room {
 			this.state.dice.roll(this.state);
 		});
 
-		this.onMessage("jail_choice", (client, message) => {
+		this.onMessage("jail", (client, message) => {
 			jail_choice(this.state, client, message);	
 		});
 

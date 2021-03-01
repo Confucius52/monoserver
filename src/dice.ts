@@ -10,13 +10,12 @@ export class Dice extends Schema {
 	static curRoll: number = 0;
 
 	roll(state) {
-		// state.dice.first = Math.random() * 6 + 1;
-		// state.dice.second = Math.random() * 6 + 1;
+		state.dice.first = Math.random() * 6 + 1;
+		state.dice.second = Math.random() * 6 + 1;
 
-
-		state.dice.first = Dice.fakeRolls[Dice.curRoll][0]; 
-		state.dice.second = Dice.fakeRolls[Dice.curRoll][1]; 
-		++Dice.curRoll;
+		/* state.dice.first = Dice.fakeRolls[Dice.curRoll][0]; */ 
+		/* state.dice.second = Dice.fakeRolls[Dice.curRoll][1]; */ 
+		/* ++Dice.curRoll; */
 
 		if (state.getCurrentPlayer().location == 40) {
 			if (state.dice.first == state.dice.second) {
