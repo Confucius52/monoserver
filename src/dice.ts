@@ -44,6 +44,6 @@ export class Dice extends Schema {
     }
 
     random() {
-        return [Math.random() * 6 + 1, Math.random() * 6 + 1];
+        return [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
     }
 }
