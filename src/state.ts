@@ -5,14 +5,14 @@ import Player from "./player";
 export class State extends Schema {
 	@type({map : Player})
 	players = new MapSchema<Player>();
-	
+
 	@type([ "string" ])
 	playerIds = new ArraySchema<string>();
 
 	@type(Dice)
 	dice = new Dice();
 
-	@type("number") 
+	@type("number")
 	currentTile = 0
 
 	@type("string")
@@ -25,11 +25,11 @@ export class State extends Schema {
 	currentTurn = 0
 
 	// @type([ Tile ])
-	// tiles = ArraySchema<Tile>(); 
+	// tiles = ArraySchema<Tile>();
 
 	// @type(Auction)
 	// auction = new Auction()
-   	colors: string[] = ['#da00fe', '#fea600', "#fe4138", "#0072BB", "#29b30f", "#00e2e5"]  
+   	colors: string[] = ['#da00fe', '#fea600', "#fe4138", "#0072BB", "#29b30f", "#00e2e5"]
 
 	constructor() {
 		super();
@@ -40,11 +40,11 @@ export class State extends Schema {
 	}
 
 	addPlayer(id, name) {
-		var color = this.colors.shift();
-	
+		const color = this.colors.shift();
+
 		this.playerIds.push(id);
 		this.players.set(id, new Player(name, id, color));
-		this.colors.push(color); 
+		this.colors.push(color);
 	}
 }
 
