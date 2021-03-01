@@ -32,6 +32,9 @@ export class Dice extends Schema {
 			if (state.dice.consecutiveDoubles == 3) {
 				state.dice.consecutiveDoubles = 0;
 				state.getCurrentPlayer().location = 40;
+				++state.currentTurn;
+				state.currentTurn %= state.playerIds.length;
+				state.dice.consecutiveDoubles = 0;
 			}
 		} else {
 			++state.currentTurn;

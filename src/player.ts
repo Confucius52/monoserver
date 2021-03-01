@@ -1,12 +1,22 @@
 import { type, Schema } from "@colyseus/schema";
 
 export default class Player extends Schema {
-	@type("string") username;
-	@type("string") color;
-	@type("number") money;
-	@type("number")	cards;
-	@type("number")	location;
-	id;
+	@type("string") 
+	username;
+
+	@type("string") 
+	color;
+
+	@type("number") 
+	money;
+
+	@type("number")	
+	cards;
+
+	@type("number")	
+	location;
+	
+	id: string;
 
 	constructor(username, id, color, money=200, cards=0, location=0) {
 		super();

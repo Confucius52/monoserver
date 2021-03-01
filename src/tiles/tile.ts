@@ -19,4 +19,6 @@ export abstract class Tile {
 		this.full_name = full_name;
 		this.split_name = split_name;
 	}
+
+	abstract onLand(state); 
 }
